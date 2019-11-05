@@ -2,7 +2,7 @@ const router = require('express').Router(); // eslint-disable-line new-cap
 const Exercise = require('../models/exercise.model');
 
 router.route('/').get((req, res) => {
-  Exercise.find()
+  Exercise.find() // no filters: find all exercises
       .then((exercises) => res.json(exercises))
       .catch((err) => res.status(400).json('Error: ' + err));
 });
