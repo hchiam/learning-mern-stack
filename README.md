@@ -73,7 +73,7 @@ touch routes/exercises.js
 touch routes/users.js
 ```
 
-## Optional setup for ESLint:
+## Optional setup for [ESLint](https://github.com/hchiam/learning-eslint-google):
 
 ```bash
 cd mern-exercise-tracker/backend
