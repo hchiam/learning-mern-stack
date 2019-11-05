@@ -1,3 +1,4 @@
 mern-exercise-tracker/backend/.env
 node_modules
 .env
+.DS_Store

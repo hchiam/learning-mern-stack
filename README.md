@@ -48,11 +48,16 @@ Hit the "Connect" button to see the security and connection steps.
 
 ObjectId is guaranteed unique across collections: timestamp + random value + count.
 
-## Project Folder Setup
+## Project Setup
 
 ```bash
 node -v
 npx create-react-app mern-exercise-tracker
+```
+
+## Backend Setup
+
+```bash
 cd mern-exercise-tracker
 mkdir backend # in bigger projects: might have backend folder not inside frontend folder
 cd backend
@@ -89,4 +94,67 @@ npm install --save-dev eslint eslint-config-google # I like to use eslint
 # JavaScript config file
 # Yes, install eslint-plugin-react@latest
 nodemon -x 'npm run lint; node server.js' # inside /backend
+```
+
+## React
+
+After `npx create-react-app mern-exercise-tracker` was run, you have the folders `/public` and `/src`:
+
+- **`/public/index.html`** is the page. The auto-generated line `<div id="root"></div>` is where React will attach the React app.
+- **`/src/index.js`** is the main JavaScript file. The auto-generated line `import App from './App';` is where it imports the React app, and `ReactDOM.render(<App />, document.getElementById('root'));` is where it actually tries to attach the React app to the `div` with `id="root"` in `/public/index.html`.
+- **`/src/App.js`** is the React app.
+
+### React Router DOM
+
+`react-router-dom` makes it easier to route URLs to different React components.
+
+Put everything that you want to use to Router on inside it:
+
+```js
+<Router>
+  ...
+</Router>
+```
+
+And put routes inside it:
+
+```js
+<Router>
+  <div className="container">
+    <Navbar />
+    <br/>
+    <Route path="/" exact component={ExercisesList} />
+    <Route path="/edit/:id" component={EditExercise} />
+    <Route path="/create" component={CreateExercise} />
+    <Route path="/user" component={CreateUser} />
+  </div>
+</Router>
+```
+
+Each `Route` maps a URL `path` to a `component`. (Create these components later: `ExercisesList`, `EditExercise`, `CreateExercise`, `CreateUser`.)
+
+The `<Link>` element from `react-router-dom` lets you link to other routes, like an `<a>` tag that links to a different URL).
+
+## Frontend Setup
+
+In a separate CLI tab, run this to start the frontend:
+
+```bash
+cd mern-exercise-tracker # not in backend folder
+npm start # should auto-open http://localhost:3000
+```
+
+^ Every time you save, the page should auto-update.
+
+In yet another separate CLI tab, run more setup commands:
+
+```bash
+cd mern-exercise-tracker # not in backend folder
+npm install bootstrap react-router-dom
+mkdir src/components
+touch src/components/navbar.component.js
+touch src/components/exercises-list.component.js
+touch src/components/edit-exercise.component.js
+touch src/components/create-exercise.component.js
+touch src/components/create-user.component.js
 ```
