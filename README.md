@@ -6,6 +6,8 @@ Free Code Camp Tutorial: on [YouTube](https://www.youtube.com/watch?v=7CqJlxBYj-
 
 My fork of [Beau Carne](https://github.com/beaucarnes)'s repo: <https://github.com/hchiam/mern-exercise-tracker-mongodb>
 
+I've worked through most of [Colt Steele's Udemy course](https://github.com/hchiam/web-dev-bootcamp)'s "[YelpCamp](https://github.com/hchiam/web-dev-bootcamp/tree/master/yelp-camp#yelp-camp)" example before working on this.
+
 ## Notes
 
 **M** = MongoDB (We'll use Mongoose to make it easier for Node.js to work with MongoDB, and we'll use MongoDB Atlas = MongoDB database, but cloud).
