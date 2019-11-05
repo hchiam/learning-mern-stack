@@ -19,11 +19,8 @@ mongoose.connect(uri, {
 });
 
 const connection = mongoose.connection;
-connection.on('error', (err) => {
-  console.log('\n\n\n-------------------------error occurred-------------------------\n\n\n');
-});
 connection.once('open', () => {
-  console.log('\n\n\n-------------------------MongoDB database connection established successfully-------------------------\n\n\n');
+  console.log('MongoDB database connection established successfully');
 });
 
 app.listen(port, () => {
