@@ -24,4 +24,4 @@ yarn-error.log*
 
 # custom:
 node_modules
-
+.env
