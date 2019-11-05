@@ -135,6 +135,10 @@ Each `Route` maps a URL `path` to a `component`. (Create these components later:
 
 The `<Link>` element from `react-router-dom` lets you link to other routes, like an `<a>` tag that links to a different URL).
 
+### react-datepicker
+
+`react-datepicker` gives you a date picker component for React.
+
 ### State = "Variables" in React
 
 Example:
@@ -184,7 +188,7 @@ In yet another separate CLI tab, run more setup commands:
 
 ```bash
 cd mern-exercise-tracker # not in backend folder
-npm install bootstrap react-router-dom
+npm install bootstrap react-router-dom react-datepicker
 mkdir src/components
 touch src/components/navbar.component.js
 touch src/components/exercises-list.component.js
