@@ -68,11 +68,15 @@ touch .env
 mkdir models # inside /backend
 touch models/exercise.model.js
 touch models/user.model.js
+mkdir routes # inside /backend
+touch routes/exercises.js
+touch routes/users.js
 ```
 
-Optional setup for ESLint:
+## Optional setup for ESLint:
 
 ```bash
+cd mern-exercise-tracker/backend
 npm install --save-dev eslint eslint-config-google # I like to use eslint
 ./node_modules/.bin/eslint --init
 # To check syntax and find problems
