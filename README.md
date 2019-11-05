@@ -21,6 +21,24 @@ Exercise Tracker App:
 - Users collection
 - every Exercise has one User
 
+To just get it running after you `git clone`, set up [MongoDB Atlas](https://github.com/hchiam/learning-mern-stack#mongodb-atlas), and then follow these CLI steps:
+
+```bash
+cd mern-exercise-tracker
+npm install
+cd backend
+npm install
+
+# inside /mern-exercise-tracker: (separate CLI tab)
+npm start
+
+# inside /backend folder: (separate CLI tab)
+nodemon server.js
+# or: nodemon -x 'npm run lint; node server.js'
+```
+
+To develop it yourself from scratch, follow CLI steps below, and copy the code from this repo to fill in the files you create.
+
 ## MongoDB
 
 ### Terms
@@ -37,6 +55,8 @@ Reference = Foreign Key (in Tabular/Relational DBs)
 BSON (looks like JSON). "Documents" can be nested. Data can be placed "right next" to each other.
 
 ### MongoDB Atlas
+
+<https://youtu.be/7CqJlxBYj-M?t=293>
 
 Cluster = place to store data (in the cloud).
 
