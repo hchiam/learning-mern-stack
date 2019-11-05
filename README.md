@@ -62,7 +62,14 @@ Cluster = place to store data (in the cloud).
 
 Hit the "Connect" button to see the security and connection steps.
 
-`mongodb+srv://dbUser:<password>@cluster0-m5jph.gcp.mongodb.net/test?retryWrites=true&w=majority`
+Set up your `.env` file and paste in the URI that you get from following the instructions in the video above. It should look something like this:
+
+```text
+PORT=5000
+ATLAS_URI=mongodb+srv://<dbUser>:<password>@cluster0-m5jph.gcp.mongodb.net/test?retryWrites=true&w=majority
+```
+
+You need to remember to paste in the dbUser and password. Do **NOT** share it publicly, and do **NOT** include the `.env` file in commits.
 
 ### MongoDB ObjectId
 
