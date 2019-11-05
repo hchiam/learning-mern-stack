@@ -118,6 +118,7 @@ export default class CreateExercise extends Component {
           <div className="form-group">
             <label>Date: </label>
             <div>
+              {/* npm install react-datepicker */}
               <DatePicker
                 selected={this.state.date}
                 onChange={this.onChangeDate}
