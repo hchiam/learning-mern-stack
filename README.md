@@ -58,6 +58,29 @@ npm init
 npm install express cors mongoose dotenv
 npm install -g nodemon # you might have to do sudo
 touch server.js # inside /backend
-touch .env
 nodemon server.js
+```
+
+Leave `nodemon` running in that CLI tab. Open another CLI tab to run in parallel so you can create more files.
+
+```bash
+touch .env
+mkdir models # inside /backend
+touch models/exercise.model.js
+touch models/user.model.js
+```
+
+Optional setup for ESLint:
+
+```bash
+npm install --save-dev eslint # I like to use eslint
+./node_modules/.bin/eslint --init
+# To check syntax and find problems
+# CommonJS (require/exports)
+# React
+# No TypeScript
+# Browser, Node
+# JavaScript config file
+# Yes, install eslint-plugin-react@latest
+nodemon -x 'npm run lint; node server.js' # inside /backend
 ```
