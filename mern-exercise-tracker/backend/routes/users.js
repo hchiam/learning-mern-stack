@@ -3,7 +3,7 @@ const User = require('../models/user.model');
 
 router.route('/').get((req, res) => {
   User.find() // no filters: find all users
-      .then((users) => res.json(users))
+      .then((users) => res.json(users)) // return it as JSON
       .catch((err) => res.status(400).json('Error: ' + err));
 });
 

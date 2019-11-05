@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class CreateUser extends Component {
   constructor(props) {
-    super(props);
+    super(props); // always do this!
 
     // need to use .bind(this) so `this` is not undefined inside each function
     this.onChangeUsername = this.onChangeUsername.bind(this);
@@ -30,6 +31,16 @@ export default class CreateUser extends Component {
     };
 
     console.log(user);
+
+    // connection to backend!
+    const backendEndpoint = 'http://localhost:5000/users/add';
+    axios.post(backendEndpoint, user) // user is in the JSON format expected
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     this.setState({
       username: '', // reset form

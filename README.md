@@ -146,7 +146,7 @@ Example:
 ```js
 export default class CreateExercise extends Component {
   constructor(props) {
-    super(props);
+    super(props); // always do this!
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
 
@@ -195,4 +195,42 @@ touch src/components/exercises-list.component.js
 touch src/components/edit-exercise.component.js
 touch src/components/create-exercise.component.js
 touch src/components/create-user.component.js
+```
+
+## Setup Connection Between Frontend and Backend
+
+We'll use `axios` to do that.
+
+```bash
+# in /mern-exercise-tracker
+npm install axios
+```
+
+Then in JS:
+
+```js
+import axios from 'axios';
+...
+// add an exercise to backend!
+const backendEndpoint = 'http://localhost:5000/exercises/add';
+axios.post(backendEndpoint, exercise) // exercise is in the JSON format expected
+  .then((res) => console.log(res.data));
+```
+
+and:
+
+```js
+const backendEndpoint = 'http://localhost:5000/users';
+axios.get(backendEndpoint) // get list of users from backend!
+  .then((res) => {
+    if (res.data.length > 0) {
+      this.setState({
+        users: res.data.map((user) => user.username),
+        username: res.data[0],
+      });
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```

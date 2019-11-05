@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 export default class CreateExercise extends Component {
   constructor(props) {
-    super(props);
+    super(props); // always do this!
 
     // need to use .bind(this) so `this` is not undefined inside each function
     this.onChangeUsername = this.onChangeUsername.bind(this);
@@ -27,11 +28,24 @@ export default class CreateExercise extends Component {
   // this is a built-in React lifecycle method
   // componentDidMount is auto-called right before anything displays on the page
   componentDidMount() {
-    // manually set for now (should fetch from DB)
-    this.setState({
-      users: ['test user 1', 'test user 2'],
-      username: 'test user 1',
-    });
+    // // manually set for now (should fetch from DB)
+    // this.setState({
+    //   users: ['test user 1', 'test user 2'],
+    //   username: 'test user 1',
+    // });
+    const backendEndpoint = 'http://localhost:5000/users';
+    axios.get(backendEndpoint) // get list of users from backend!
+      .then((res) => {
+        if (res.data.length > 0) {
+          this.setState({
+            users: res.data.map((user) => user.username),
+            username: res.data[0],
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   onChangeUsername(e) { // event to be called by username text box function
@@ -70,6 +84,14 @@ export default class CreateExercise extends Component {
     };
 
     console.log(exercise);
+
+    // add an exercise to backend!
+    const backendEndpoint = 'http://localhost:5000/exercises/add';
+    axios.post(backendEndpoint, exercise) // exercise is in the JSON format expected
+      .then((res) => console.log(res.data))
+      .catch((err) => {
+        console.log(err);
+      });
 
     window.location = '/'; // go back to home page
   }
