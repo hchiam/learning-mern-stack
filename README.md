@@ -28,11 +28,15 @@ cd mern-exercise-tracker
 npm install
 cd backend
 npm install
+touch .env
 
 # inside /mern-exercise-tracker: (separate CLI tab)
+cd ..
+cd mern-exercise-tracker
 npm start
 
 # inside /backend folder: (separate CLI tab)
+cd mern-exercise-tracker/backend
 nodemon server.js
 # or: nodemon -x 'npm run lint; node server.js'
 ```
