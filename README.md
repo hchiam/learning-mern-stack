@@ -73,7 +73,7 @@ touch models/user.model.js
 Optional setup for ESLint:
 
 ```bash
-npm install --save-dev eslint # I like to use eslint
+npm install --save-dev eslint eslint-config-google # I like to use eslint
 ./node_modules/.bin/eslint --init
 # To check syntax and find problems
 # CommonJS (require/exports)
