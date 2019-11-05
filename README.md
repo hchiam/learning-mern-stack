@@ -135,6 +135,40 @@ Each `Route` maps a URL `path` to a `component`. (Create these components later:
 
 The `<Link>` element from `react-router-dom` lets you link to other routes, like an `<a>` tag that links to a different URL).
 
+### State = "Variables" in React
+
+Example:
+
+```js
+export default class CreateExercise extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+
+    // initialize state ("variables" in React)
+    this.state = {
+      // set state corresponding to our MongoDB document:
+      username: '',
+      description: '',
+      duration: 0,
+      date: new Date(),
+      users: [],
+    };
+  }
+
+  onChangeUsername(e) { // event to be called by username text box function
+    // use this.setState({...}); instead of this.state.username = "new username";
+    this.setState({
+      username: e.target.value, // update just the username in this.state
+    });
+  }
+
+  ...
+
+};
+```
+
 ## Frontend Setup
 
 In a separate CLI tab, run this to start the frontend:
