@@ -30,7 +30,7 @@ export default class EditExercise extends Component {
   componentDidMount() {
     // get exercises from backend endpoint:
     // (this.props.match.params.id (:id) comes from react-router-dom and lets us access URL :id)
-    axios.get('http://localhost:5000/exercises' + this.props.match.params.id)
+    axios.get('http://localhost:5000/exercises/' + this.props.match.params.id)
       .then((res) => {
         this.setState({
           username: res.data.username,
@@ -44,7 +44,7 @@ export default class EditExercise extends Component {
       });
 
     // get users from backend endpoint:
-    axios.get('http://localhost:5000/users')
+    axios.get('http://localhost:5000/users/')
       .then((res) => {
         if (res.data.length > 0) {
           this.setState({
@@ -96,7 +96,7 @@ export default class EditExercise extends Component {
 
     // add an exercise to backend!
     // (this.props.match.params.id (:id) comes from react-router-dom and lets us access URL :id)
-    const backendEndpoint = 'http://localhost:5000/exercises/update' + this.props.match.params.id;
+    const backendEndpoint = 'http://localhost:5000/exercises/update/' + this.props.match.params.id;
     axios.post(backendEndpoint, exercise) // exercise is in the JSON format expected
       .then((res) => console.log(res.data))
       .catch((err) => {

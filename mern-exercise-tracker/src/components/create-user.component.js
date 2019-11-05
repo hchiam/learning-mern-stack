@@ -33,7 +33,7 @@ export default class CreateUser extends Component {
     console.log(user);
 
     // connection to backend!
-    const backendEndpoint = 'http://localhost:5000/users/add';
+    const backendEndpoint = 'http://localhost:5000/users/add/';
     axios.post(backendEndpoint, user) // user is in the JSON format expected
       .then((res) => {
         console.log(res.data);

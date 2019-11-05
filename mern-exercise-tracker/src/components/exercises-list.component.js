@@ -31,7 +31,7 @@ export default class ExercisesList extends Component {
   // this is a built-in React lifecycle method
   // componentDidMount is auto-called right before anything displays on the page
   componentDidMount() {
-    const backendEndpoint = 'http://localhost:5000/exercises';
+    const backendEndpoint = 'http://localhost:5000/exercises/';
     axios.get(backendEndpoint) // get list of exercises from backend!
       .then((res) => {
         this.setState({

@@ -86,7 +86,7 @@ export default class CreateExercise extends Component {
     console.log(exercise);
 
     // add an exercise to backend!
-    const backendEndpoint = 'http://localhost:5000/exercises/add';
+    const backendEndpoint = 'http://localhost:5000/exercises/add/';
     axios.post(backendEndpoint, exercise) // exercise is in the JSON format expected
       .then((res) => console.log(res.data))
       .catch((err) => {
