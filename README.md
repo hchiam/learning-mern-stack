@@ -48,12 +48,12 @@ To develop it yourself from scratch, follow CLI steps below, and copy the code f
 
 ### Terms
 
-Database = Database (in Tabular/Relational DBs)
-Collection = Table (in Tabular/Relational DBs)
-Document = Row (in Tabular/Relational DBs)
-Index = Index (in Tabular/Relational DBs)
-$lookup = Join (in Tabular/Relational DBs)
-Reference = Foreign Key (in Tabular/Relational DBs)
+- Database = Database (in Tabular/Relational DBs)
+- Collection = Table (in Tabular/Relational DBs)
+- Document = Row (in Tabular/Relational DBs)
+- Index = Index (in Tabular/Relational DBs)
+- $lookup = Join (in Tabular/Relational DBs)
+- Reference = Foreign Key (in Tabular/Relational DBs)
 
 ### MongoDB Documents
 
@@ -74,7 +74,7 @@ PORT=5000
 ATLAS_URI=mongodb+srv://<dbUser>:<password>@cluster0-m5jph.gcp.mongodb.net/test?retryWrites=true&w=majority
 ```
 
-You need to remember to paste in the dbUser and password. Do **NOT** share it publicly, and do **NOT** include the `.env` file in commits.
+You need to remember to paste in the `<dbUser>` and `<password>`. Do **NOT** share it publicly, and do **NOT** include the `.env` file in commits.
 
 ### MongoDB ObjectId
 
