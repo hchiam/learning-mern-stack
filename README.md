@@ -43,7 +43,8 @@ nodemon server.js
 
 To develop it yourself from scratch, follow CLI steps below, and copy the code from this repo to fill in the files you create.
 
-## MongoDB
+<details>
+<summary><span style="font-size:x-large">MongoDB</span></summary>
 
 ### Terms
 
@@ -79,14 +80,20 @@ You need to remember to paste in the dbUser and password. Do **NOT** share it pu
 
 ObjectId is guaranteed unique across collections: timestamp + random value + count.
 
-## Project Setup
+</details>
+
+<details>
+<summary><span style="font-size:x-large">Project Setup</span></summary>
 
 ```bash
 node -v
 npx create-react-app mern-exercise-tracker
 ```
 
-## Backend Setup
+</details>
+
+<details>
+<summary><span style="font-size:x-large">Backend Setup</span></summary>
 
 ```bash
 cd mern-exercise-tracker
@@ -111,7 +118,10 @@ touch routes/exercises.js
 touch routes/users.js
 ```
 
-## Optional setup for [ESLint](https://github.com/hchiam/learning-eslint-google)
+</details>
+
+<details>
+<summary><span style="font-size:x-large"><a href="https://github.com/hchiam/learning-eslint-google">ESLint</a> Setup (Optional)</span></summary>
 
 ```bash
 cd mern-exercise-tracker/backend
@@ -127,7 +137,10 @@ npm install --save-dev eslint eslint-config-google # I like to use eslint
 nodemon -x 'npm run lint; node server.js' # inside /backend
 ```
 
-## React
+</details>
+
+<details>
+<summary><span style="font-size:x-large">React</span></summary>
 
 After `npx create-react-app mern-exercise-tracker` was run, you have the folders `/public` and `/src`:
 
@@ -204,7 +217,10 @@ export default class CreateExercise extends Component {
 };
 ```
 
-## Frontend Setup
+</details>
+
+<details>
+<summary><span style="font-size:x-large">Frontend Setup</span></summary>
 
 In a separate CLI tab, run this to start the frontend:
 
@@ -228,7 +244,10 @@ touch src/components/create-exercise.component.js
 touch src/components/create-user.component.js
 ```
 
-## Setup Connection Between Frontend and Backend
+</details>
+
+<details>
+<summary><span style="font-size:x-large">Setup Connection Between Frontend and Backend</span></summary>
 
 We'll use `axios` to do that.
 
@@ -265,3 +284,5 @@ axios.get(backendEndpoint) // get list of users from backend!
     console.log(err);
   });
 ```
+
+</details>
